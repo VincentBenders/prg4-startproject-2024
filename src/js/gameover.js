@@ -4,7 +4,8 @@ import { Game } from "./game.js"
 
 export class GameOver extends Scene {
 
-
+    game
+    result
     onInitialize(engine){
         let label = new Label({
             text: 'Game Over',
@@ -15,9 +16,8 @@ export class GameOver extends Scene {
                 unit: FontUnit.Px
             })
         })
-        
         this.add(label)
-        let result = new Label({
+        this.result = new Label({
             text: 'score',
             pos: new Vector(400, 120),
             font: new Font({
@@ -26,10 +26,16 @@ export class GameOver extends Scene {
                 unit: FontUnit.Px
             })
         })
-        result.text = 'Score: '+engine.score;
         
-        this.add(result)
+        this.game = engine
+    }
 
+    onActivate(engine){
+
+        
+        this.result.text = 'Score: '+this.game.score;
+        
+        this.add(this.result)
     }
 
     /**
