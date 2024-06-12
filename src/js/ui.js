@@ -20,5 +20,7 @@ export class UI extends ScreenElement {
 
     updateScore(score) {
         this.scoreText.text = 'Score: '+score
+        //@ts-ignore
+        console.log(this.scene?.engine.score);
     }
 }

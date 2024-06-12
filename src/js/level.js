@@ -13,6 +13,7 @@ export class LevelScreen extends Scene {
     }
 
     onActivate(engine){
+      engine.score = 0
       for(const actor of this.actors){
         actor.kill()
   

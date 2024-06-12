@@ -1,8 +1,10 @@
 import { Keys, Scene, Vector } from "excalibur";
 import { Label, FontUnit, Font} from "excalibur";
-
+import { Game } from "./game.js"
 
 export class GameOver extends Scene {
+
+
     onInitialize(engine){
         let label = new Label({
             text: 'Game Over',
@@ -30,9 +32,13 @@ export class GameOver extends Scene {
 
     }
 
+    /**
+ * @param {Game} engine Description
+*/
     onPostUpdate(engine){
         if (engine.input.keyboard.wasPressed(Keys.Space)) {
-            this.engine.goToScene('level')
+            engine.score = 0
+            engine.goToScene('level')
          }
     }
     }
