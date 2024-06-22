@@ -10,9 +10,10 @@ export class UI extends ScreenElement {
             text: 'Score: 0',
             pos: new Vector(0, 0),
             font: new Font({
-                family: 'impact',
+                family: 'sans-serif',
                 size: 24,
-                unit: FontUnit.Px
+                unit: FontUnit.Px,
+                color: Color.Gray
             })
         })
         this.addChild(this.scoreText)

@@ -1,4 +1,4 @@
-import { Keys, Scene, Vector } from "excalibur";
+import { Color, Keys, Scene, Vector } from "excalibur";
 import { Label, FontUnit, Font} from "excalibur";
 import { Game } from "./game.js"
 
@@ -9,21 +9,23 @@ export class GameOver extends Scene {
     onInitialize(engine){
         let label = new Label({
             text: 'Game Over',
-            pos: new Vector(400, 100),
+            pos: new Vector(240, 290),
             font: new Font({
-                family: 'impact',
-                size: 24,
-                unit: FontUnit.Px
+                family: 'sans-serif',
+                size: 60,
+                unit: FontUnit.Px,
+                color: Color.White
             })
         })
         this.add(label)
         this.result = new Label({
             text: 'score',
-            pos: new Vector(400, 120),
+            pos: new Vector(310, 360),
             font: new Font({
-                family: 'impact',
-                size: 24,
-                unit: FontUnit.Px
+                family: 'sans-serif',
+                size: 44,
+                unit: FontUnit.Px,
+                color: Color.White
             })
         })
         
