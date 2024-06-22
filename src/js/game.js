@@ -12,7 +12,11 @@ export class Game extends Engine {
   // TODO: score var
   score = 0;
   constructor() {
-    super({ width: 800, height: 750 });
+    super({ 
+      width: 800, 
+      height: 750, 
+      maxFps: 60
+    });
     this.start(ResourceLoader).then(() => this.startGame());
   }
 
